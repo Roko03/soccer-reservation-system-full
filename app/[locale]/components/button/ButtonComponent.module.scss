@@ -1,0 +1,36 @@
+@import "../../../styles/main.scss";
+
+.button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: rem(8);
+}
+
+.authentication_button {
+  background-color: $green;
+  color: $white;
+  padding: rem(12) rem(32);
+  align-self: baseline;
+}
+
+.add_button {
+  background-color: $green;
+  color: $white;
+  padding: rem(16) rem(24);
+  align-self: baseline;
+}
+
+.profile_button {
+  background-color: $blue;
+  color: $white;
+  padding: rem(16) rem(24);
+  align-self: baseline;
+}
+
+.delete_button {
+  background-color: $red;
+  color: $white;
+  padding: rem(16) rem(24);
+  align-self: baseline;
+}
