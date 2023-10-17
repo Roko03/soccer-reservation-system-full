@@ -1,7 +1,7 @@
 import User from "@/lib/models/user.model";
 import { connectToDatabase } from "@/lib/mongodb";
 import { NextResponse } from "next/server";
-import { hash } from "bcrypt"
+import { hash } from "bcryptjs"
 import { cookies } from 'next/headers'
 import { verify } from "jsonwebtoken";
 
