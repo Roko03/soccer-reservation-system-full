@@ -1,0 +1,31 @@
+@import "./styles/layout.scss";
+@import "./styles/main.scss";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--poppins);
+}
+
+p {
+  font-family: var(--roboto);
+}
+
+h1 {
+  font-size: rem(48);
+}
+
+h2 {
+  font-size: rem(32);
+}
+
+h3 {
+  font-size: rem(24);
+}
+
+p {
+  font-size: rem(18);
+}
