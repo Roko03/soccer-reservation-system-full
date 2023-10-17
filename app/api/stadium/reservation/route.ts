@@ -4,7 +4,7 @@ import Reservation from '@/lib/models/reservation.model';
 
 export async function POST(request: Request, body: Reservation, context: any) {
     try {
-        connectToDatabase('SoccerReservationSystemDB');
+        await connectToDatabase('SoccerReservationSystemDB');
 
         const reservationPost = new Reservation({
             stadiumId: context.params.id,

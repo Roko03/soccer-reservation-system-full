@@ -4,7 +4,7 @@ import Stadium from "@/lib/models/stadium.model";
 
 export async function GET(request: Request) {
     try {
-        connectToDatabase("SoccerReservationSystemDB");
+        await connectToDatabase("SoccerReservationSystemDB");
         const data = await Stadium.find({}).limit(20).exec();
 
         return NextResponse.json(data);

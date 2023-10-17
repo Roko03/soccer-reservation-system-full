@@ -36,7 +36,7 @@ export async function POST(request: Request) {
     try {
         const { username, email, password } = (await request.json()) as User;
 
-        connectToDatabase("SoccerReservationSystemDB")
+        await connectToDatabase("SoccerReservationSystemDB")
 
         const oldUser = await User.findOne({ email: email });
         if (oldUser) {
