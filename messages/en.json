@@ -1,0 +1,24 @@
+{
+  "Index": {
+    "title": "Welcome to the application for the reservation football field!",
+    "editProfil": "Edit profil",
+    "logOut": "Log out",
+    "password": "Password",
+    "repeatPassword": "Repeat Password",
+    "createNewAccount": "Create New Account",
+    "login": "Login",
+    "register": "Register",
+    "loginTitle": "Log in",
+    "registerTitle": "Register",
+    "username": "Username",
+    "usernameError": "Username is required",
+    "emailError": "Email is required",
+    "passwordError": "Password is required",
+    "repeatPasswordError": "Confirm password",
+    "passwordNotMatch":"Password must match",
+    "passwordLength": "Password must be at least 6 characters",
+    "successfulRegisterMessage": "You have successfully register",
+    "errorRegisterMessage": "Username or email already exist",
+    "loginError": "Failed to log in"
+  }
+}
