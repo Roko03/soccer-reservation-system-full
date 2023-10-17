@@ -1,5 +1,24 @@
 {
   "Index": {
-    "title": "Pozdrav svijete!"
+    "title": "Dobrodošli na aplikaciju za rezervaciju terena za nogomet!",
+    "editProfil": "Uredi profil",
+    "logOut": "Odjavi se",
+    "password": "Šifra",
+    "repeatPassword": "Ponovi šifru",
+    "createNewAccount": "Izradi novi račun",
+    "login": "Prijava",
+    "register": "Registracija",
+    "loginTitle": "Prijavi se",
+    "registerTitle": "Registriraj se",
+    "username": "Korisničko ime",
+    "usernameError": "Potrebno je korisničko ime",
+    "emailError": "Potreban je email",
+    "passwordError": "Potrebna je šifra",
+    "repeatPasswordError": "Potvrdi šifru",
+    "passwordNotMatch":"Šifre se ne poklapaju",
+    "passwordLength": "Šifra mora imati minimalno 6 karaktera",
+    "successfulRegisterMessage": "Uspješno ste se registrirali",
+    "errorRegisterMessage": "Korisničko ime ili email već postoje",
+    "loginError": "Neuspješna prijava"
   }
 }
