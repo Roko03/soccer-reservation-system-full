@@ -47,14 +47,8 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
   const [repeatPasswordInputVisible, setRepeatPasswordInputVisible] =
     useState(false);
 
-  const onSubmit: SubmitHandler<RegisterData> = async (data) => {
-    const hashedPassword = await bcrypt.hash(data.password, 10);
-    const user: RegisterUser = {
-      username: data.username,
-      email: data.email,
-      password: hashedPassword,
-    };
-    const response = await registerUser(user);
+  const onSubmit: SubmitHandler<User> = async (data) => {
+    const response = await registerUser(data);
     if (!response) {
       setSuccessful(false);
       setError(true);

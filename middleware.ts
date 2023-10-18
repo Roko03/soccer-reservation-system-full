@@ -25,7 +25,7 @@ function withExtraMiddleware(next: NextMiddleware) {
         }
 
         const url = request.nextUrl.clone();
-        let token = request.cookies.get('token');
+        let token = request.cookies.get(`${process.env.NEXT_PUBLIC_COOKIE_NAME}`);
         const locale = request.cookies.get('NEXT_LOCALE')?.value || 'en';
         const isPublicPage = url.pathname === `${locale === 'en' ? '/' : '/hr'}`
 
