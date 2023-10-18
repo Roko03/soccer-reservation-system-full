@@ -6,7 +6,6 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
 import Image from "next/image";
 import registerUser from "@/lib/registerUser";
-import bcrypt from "bcryptjs";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 

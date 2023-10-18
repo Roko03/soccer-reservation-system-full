@@ -7,10 +7,8 @@ export default async function registerUser(data: User) {
             }
         );
 
-        if (response.ok) {
-            alert("User was created!");
-        } else {
-            alert("Can't create user");
+        if (!response.ok) {
+            return null
         }
 
         return await response.json();

@@ -33,11 +33,15 @@ const LoginFormComponent: React.FC<LoginFormComponentProps> = ({
   } = useForm<LoginSchema>({ resolver: zodResolver(loginSchema) });
 
   const onSubmit: SubmitHandler<LoginData> = async (data) => {
-    const resposne = await loginUser(data);
+    const response = await loginUser(data);
 
-    if (resposne) {
-      route.push("/");
+    if (response == null) {
+      setFailedLogin();
+      reset();
+      return;
     }
+
+    route.push("/");
 
     reset();
   };

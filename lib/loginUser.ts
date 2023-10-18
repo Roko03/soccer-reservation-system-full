@@ -7,14 +7,13 @@ export default async function loginUser(data: LoginData) {
             }
         );
 
-        if (response.ok) {
+        if (!response.ok) {
             return null;
         }
 
         return await response.json();
 
-    } catch (error) {
-        alert("An error occurred while login.");
+    } catch {
         return null;
     }
 }
