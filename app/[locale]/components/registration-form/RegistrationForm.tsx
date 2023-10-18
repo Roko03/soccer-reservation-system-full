@@ -65,6 +65,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
         type="text"
         placeholder={t("username")}
         {...register("username")}
+        autoComplete="username"
       />
       {errors.username && (
         <p className={styles.error}>{`${errors.username.message}`}</p>
@@ -73,7 +74,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
         type="email"
         placeholder="Email"
         {...register("email")}
-        autoComplete="username"
+        autoComplete="email"
       />
       {errors.email && (
         <p className={styles.error}>{`${errors.email.message}`}</p>

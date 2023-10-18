@@ -49,7 +49,12 @@ const LoginFormComponent: React.FC<LoginFormComponentProps> = ({
   return (
     <form className={styles.login_form} onSubmit={handleSubmit(onSubmit)}>
       <h3>{t("loginTitle")}</h3>
-      <input type="text" placeholder="Email" {...register("email")} />
+      <input
+        type="text"
+        placeholder="Email"
+        {...register("email")}
+        autoComplete="email"
+      />
       {errors.email && (
         <p className={styles.error}>{`${errors.email.message}`}</p>
       )}
@@ -57,6 +62,7 @@ const LoginFormComponent: React.FC<LoginFormComponentProps> = ({
         type="password"
         placeholder={t("password")}
         {...register("password")}
+        autoComplete="password"
       />
       {errors.password && (
         <p className={styles.error}>{`${errors.password.message}`}</p>
