@@ -1,3 +1,5 @@
+
+
 type Reservation = {
     name: string;
     phoneNumber: number;
@@ -6,6 +8,11 @@ type Reservation = {
 
 type User = {
     username: string;
+    email: string;
+    password: string;
+}
+
+type LoginData = {
     email: string;
     password: string;
 }

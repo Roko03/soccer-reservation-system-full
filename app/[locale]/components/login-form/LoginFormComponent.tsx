@@ -6,7 +6,6 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import loginUser from "@/lib/loginUser";
 import { useRouter } from "next/navigation";
-import getUserForLogin from "@/lib/getUserForLogin";
 
 interface LoginFormComponentProps {
   setIsModalOpen: () => void;
@@ -34,17 +33,9 @@ const LoginFormComponent: React.FC<LoginFormComponentProps> = ({
   } = useForm<LoginSchema>({ resolver: zodResolver(loginSchema) });
 
   const onSubmit: SubmitHandler<LoginData> = async (data) => {
-    const resposne = await getUserForLogin(data);
-    if (!resposne) {
-      setFailedLogin();
-      reset();
-      return;
-    }
-    const { token } = resposne;
+    const resposne = await loginUser(data);
 
-    const dataLogin = await loginUser(token);
-
-    if (dataLogin) {
+    if (resposne) {
       route.push("/");
     }
 
