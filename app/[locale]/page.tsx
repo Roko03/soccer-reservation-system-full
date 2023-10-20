@@ -1,3 +1,4 @@
+import HeaderComponent from "./components/header/HeaderComponent";
 import styles from "./page.module.scss";
 import { useTranslations } from "next-intl";
 
