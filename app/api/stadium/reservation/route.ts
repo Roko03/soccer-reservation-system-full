@@ -10,7 +10,8 @@ export async function POST(request: Request, body: Reservation, context: any) {
             stadiumId: context.params.id,
             name: body.name,
             phoneNumber: body.phoneNumber,
-            startDateTime: body.startDateTime
+            startDate: body.startDate,
+            time: body.time
         })
 
         const savedReservationPost = await reservationPost.save();

@@ -1,7 +1,8 @@
 type Reservation = {
     name: string;
     phoneNumber: number;
-    startDateTime: string;
+    startDate: Date,
+    time: string
 }
 
 type User = {
