@@ -3,15 +3,20 @@ import Image from "next/image";
 
 interface LandingCardComponentProps {
   stadium: Stadium;
+  setOpenModal: (id: string) => void;
 }
 
 const LandingCardComponent: React.FC<LandingCardComponentProps> = ({
   stadium,
+  setOpenModal,
 }) => {
   return (
-    <div className={styles.landing_card}>
+    <div
+      className={styles.landing_card}
+      onClick={() => setOpenModal(stadium._id)}
+    >
       <div className={styles.landing_card__description}>
-        <h2>{stadium.name}</h2>
+        <h3>{stadium.name}</h3>
         <span className={styles.location}>
           <Image src={"/location.svg"} alt="location" width={18} height={18} />
           <p>{stadium.location}</p>

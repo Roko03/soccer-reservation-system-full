@@ -19,6 +19,7 @@
     "passwordLength": "Šifra mora imati minimalno 6 karaktera",
     "successfulRegisterMessage": "Uspješno ste se registrirali",
     "errorRegisterMessage": "Korisničko ime ili email već postoje",
-    "loginError": "Neuspješna prijava"
+    "loginError": "Neuspješna prijava",
+    "availableTitle": "Dostupni termini"
   }
 }

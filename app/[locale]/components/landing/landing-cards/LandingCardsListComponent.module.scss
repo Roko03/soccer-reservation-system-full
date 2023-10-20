@@ -2,6 +2,11 @@
 
 .landing_cards_list {
   display: grid;
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+
   grid-template-columns: 1fr 1fr;
   gap: rem(32);
 
