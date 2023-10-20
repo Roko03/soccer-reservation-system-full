@@ -13,6 +13,11 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
 }) => {
   const [stadium, setStadium] = useState<Stadium | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [stadiumReservation, setStadiumReservation] = useState<Reservation>({
+    name: "",
+    phoneNumber: 0,
+    startDateTime: "",
+  });
 
   useEffect(() => {
     setIsLoading(true);
@@ -23,6 +28,8 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
         setIsLoading(false);
       });
   }, []);
+
+  const submitReservation = (date: Date, time: string) => {};
 
   if (isLoading) return <CircularProgressBar />;
   if (!stadium) return <h1>No data!</h1>;
