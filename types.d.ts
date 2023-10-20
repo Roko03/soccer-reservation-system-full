@@ -1,5 +1,3 @@
-
-
 type Reservation = {
     name: string;
     phoneNumber: number;
@@ -15,4 +13,13 @@ type User = {
 type LoginData = {
     email: string;
     password: string;
+}
+
+type Stadium = {
+    _id: string;
+    name: string;
+    location: string;
+    imageUrl: string;
+    latitude: number;
+    longitude: number;
 }
