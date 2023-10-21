@@ -37,7 +37,8 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
     setStadiumReservation((prev) => ({ ...prev, startDate: date, time: time }));
   };
 
-  console.log(stadiumReservation);
+  const buttonEnable =
+    stadiumReservation.startDate !== "" && stadiumReservation.time !== "";
 
   if (isLoading) return <CircularProgressBar />;
   if (!stadium) return <h1>No data!</h1>;
@@ -68,6 +69,7 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
           onClick={() => {
             console.log("ej");
           }}
+          isEnable={!buttonEnable}
         >
           <p>{t("reserveButton")}</p>
         </ButtonComponent>
