@@ -34,3 +34,17 @@
   padding: rem(16) rem(24);
   align-self: baseline;
 }
+
+.reserve_button {
+  background-color: transparent;
+  color: $green;
+  border: 1px solid $green;
+  padding: rem(12) rem(32);
+  align-items: flex-end;
+  transition: all 0.2s ease-in-out;
+}
+
+.reserve_button:hover {
+  background-color: $green;
+  color: $white;
+}

@@ -20,6 +20,8 @@
     "successfulRegisterMessage": "You have successfully register",
     "errorRegisterMessage": "Username or email already exist",
     "loginError": "Failed to log in",
-    "availableTitle": "Available appointments"
+    "availableTitle": "Available appointments",
+    "contactTitle": "Your contact",
+    "reserveButton": "Reserve"
   }
 }

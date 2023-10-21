@@ -20,6 +20,8 @@
     "successfulRegisterMessage": "Uspješno ste se registrirali",
     "errorRegisterMessage": "Korisničko ime ili email već postoje",
     "loginError": "Neuspješna prijava",
-    "availableTitle": "Dostupni termini"
+    "availableTitle": "Dostupni termini",
+    "contactTitle": "Vaš kontakt",
+    "reserveButton": "Rezerviraj"
   }
 }

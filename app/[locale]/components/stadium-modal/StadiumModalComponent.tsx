@@ -3,6 +3,8 @@ import Image from "next/image";
 import StadiumDescription from "./components/stadium-description/StadiumDescription";
 import { useEffect, useState } from "react";
 import CircularProgressBar from "../circular-progress/CircularProgressBar";
+import ButtonComponent from "../button/ButtonComponent";
+import { useTranslations } from "next-intl";
 
 interface StadiumModalComponentProps {
   stadiumId: string;
@@ -11,6 +13,7 @@ interface StadiumModalComponentProps {
 const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
   stadiumId,
 }) => {
+  const t = useTranslations("Index");
   const [stadium, setStadium] = useState<Stadium | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [stadiumReservation, setStadiumReservation] = useState<Reservation>({
@@ -58,7 +61,16 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
           stadiumReservation={stadiumReservation}
           stadionId={stadium._id}
           submitReservation={submitReservation}
+          setStadiumReservation={setStadiumReservation}
         />
+        <ButtonComponent
+          variant={"reserve"}
+          onClick={() => {
+            console.log("ej");
+          }}
+        >
+          <p>{t("reserveButton")}</p>
+        </ButtonComponent>
       </div>
     </div>
   );
