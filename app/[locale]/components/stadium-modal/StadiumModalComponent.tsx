@@ -38,7 +38,9 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
   };
 
   const buttonEnable =
-    stadiumReservation.startDate !== "" && stadiumReservation.time !== "";
+    stadiumReservation.startDate !== "" &&
+    stadiumReservation.time !== "" &&
+    stadiumReservation.phoneNumber !== 0;
 
   if (isLoading) return <CircularProgressBar />;
   if (!stadium) return <h1>No data!</h1>;
