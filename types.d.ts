@@ -1,7 +1,7 @@
 type Reservation = {
     name: string;
     phoneNumber: number;
-    startDate: Date,
+    startDate: string,
     time: string
 }
 

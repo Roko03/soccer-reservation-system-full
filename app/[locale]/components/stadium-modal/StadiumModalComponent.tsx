@@ -16,7 +16,8 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
   const [stadiumReservation, setStadiumReservation] = useState<Reservation>({
     name: "",
     phoneNumber: 0,
-    startDateTime: "",
+    startDate: "",
+    time: "",
   });
 
   useEffect(() => {
@@ -29,7 +30,11 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
       });
   }, []);
 
-  const submitReservation = (date: Date, time: string) => {};
+  const submitReservation = (date: string, time: string) => {
+    setStadiumReservation((prev) => ({ ...prev, startDate: date, time: time }));
+  };
+
+  console.log(stadiumReservation);
 
   if (isLoading) return <CircularProgressBar />;
   if (!stadium) return <h1>No data!</h1>;
@@ -49,7 +54,11 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
         </h3>
       </div>
       <div className={styles.stadium_modal__description}>
-        <StadiumDescription />
+        <StadiumDescription
+          stadiumReservation={stadiumReservation}
+          stadionId={stadium._id}
+          submitReservation={submitReservation}
+        />
       </div>
     </div>
   );

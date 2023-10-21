@@ -3,3 +3,34 @@
 .calendar_component {
   margin-top: rem(24);
 }
+
+.calendar_times {
+  margin-top: rem(32);
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: rem(16);
+}
+
+.time_component {
+  cursor: pointer;
+  padding: rem(8) rem(16);
+  border-radius: rem(8);
+  background-color: $green;
+  color: $white;
+  transition: all 0.2s ease-in-out;
+}
+
+.time_component:hover {
+  background-color: $white;
+  border: 1px solid $green;
+  color: $green;
+}
+
+.time_component_active {
+  background-color: $white;
+  border: 1px solid $green;
+  color: $green;
+  pointer-events: none;
+}

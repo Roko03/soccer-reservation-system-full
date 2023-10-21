@@ -4,7 +4,7 @@ const ReservationSchema = new mongoose.Schema({
     stadiumId: { type: mongoose.Schema.Types.ObjectId, ref: 'Stadium', required: true },
     name: { type: String, required: true, unique: true },
     phoneNumber: { type: Number, required: true },
-    startDate: { type: Date, required: true },
+    startDate: { type: String, required: true },
     time: { type: String, required: true },
 }, { versionKey: false, })
 
