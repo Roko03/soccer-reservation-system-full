@@ -1,5 +1,6 @@
 type Reservation = {
     name: string;
+    userId: string;
     phoneNumber: number;
     startDate: string,
     time: string
@@ -14,6 +15,12 @@ type User = {
 type LoginData = {
     email: string;
     password: string;
+}
+
+type UserData = {
+    id: string;
+    username: string;
+    email: string;
 }
 
 type Stadium = {

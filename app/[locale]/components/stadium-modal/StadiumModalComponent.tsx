@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import CircularProgressBar from "../circular-progress/CircularProgressBar";
 import ButtonComponent from "../button/ButtonComponent";
 import { useTranslations } from "next-intl";
+import getUser from "@/lib/getUser";
+import parseJWT from "@/app/util/parseJWT";
 
 interface StadiumModalComponentProps {
   stadiumId: string;
@@ -18,10 +20,23 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
   const [isLoading, setIsLoading] = useState(false);
   const [stadiumReservation, setStadiumReservation] = useState<Reservation>({
     name: "",
+    userId: "",
     phoneNumber: 0,
     startDate: "",
     time: "",
   });
+
+  useEffect(() => {
+    (async () => {
+      const { user } = await getUser();
+      const parsedUser = parseJWT(user);
+      setStadiumReservation((prev) => ({
+        ...prev,
+        name: parsedUser.username,
+        userId: parsedUser.id,
+      }));
+    })();
+  }, []);
 
   useEffect(() => {
     setIsLoading(true);
@@ -44,6 +59,8 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
 
   if (isLoading) return <CircularProgressBar />;
   if (!stadium) return <h1>No data!</h1>;
+
+  console.log(stadiumReservation);
 
   return (
     <div className={styles.stadium_modal}>

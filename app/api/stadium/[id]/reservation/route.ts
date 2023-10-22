@@ -23,6 +23,7 @@ export async function POST(request: Request, body: Reservation, context: any) {
         const reservationPost = new Reservation({
             stadiumId: context.params.id,
             name: body.name,
+            userId: body.userId,
             phoneNumber: body.phoneNumber,
             startDate: body.startDate,
             time: body.time
