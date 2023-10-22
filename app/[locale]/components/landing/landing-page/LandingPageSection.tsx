@@ -3,8 +3,10 @@ import HeaderComponent from "../../header/HeaderComponent";
 import styles from "./LandingPageSection.module.scss";
 import LandingCardsListComponent from "../landing-cards/LandingCardsListComponent";
 import DialogComponent from "../../dialog/DialogComponent";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import StadiumModalComponent from "../../stadium-modal/StadiumModalComponent";
+import getUser from "@/lib/getUser";
+import parseJWT from "@/app/util/parseJWT";
 
 interface LandingPageSectionProps {
   stadiums: Stadium[];
@@ -14,6 +16,17 @@ const LandingPageSection: React.FC<LandingPageSectionProps> = ({
   stadiums,
 }) => {
   const [openModal, setOpenModal] = useState({ id: "", open: false });
+
+  const [userData, setUserData] = useState<any | null>(null);
+
+  useEffect(() => {
+    (async () => {
+      const { user } = await getUser();
+      setUserData(parseJWT(user));
+    })();
+  }, []);
+
+  console.log(userData);
 
   return (
     <>
