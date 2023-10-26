@@ -16,11 +16,14 @@ export async function GET(request: Request, context: any) {
 }
 
 
-export async function POST(request: Request, body: Reservation, context: any) {
+export async function POST(request: Request, context: any) {
     try {
+
+        const body = (await request.json()) as Reservation;
+
         await connectToDatabase('SoccerReservationSystemDB');
 
-        const reservationPost = new Reservation({
+        let reservationPost = new Reservation({
             stadiumId: context.params.id,
             name: body.name,
             userId: body.userId,
@@ -29,10 +32,10 @@ export async function POST(request: Request, body: Reservation, context: any) {
             time: body.time
         })
 
-        const savedReservationPost = await reservationPost.save();
+        let savedReservationPost = await reservationPost.save();
         return NextResponse.json({ message: 'Reservation created successfully', data: savedReservationPost });
 
     } catch (error) {
-        return NextResponse.json("Can't make reservations.")
+        return NextResponse.json(`Can't make reservations. ${error}`)
     }
 };

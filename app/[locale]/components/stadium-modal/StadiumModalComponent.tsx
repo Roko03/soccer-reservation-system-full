@@ -7,6 +7,7 @@ import ButtonComponent from "../button/ButtonComponent";
 import { useTranslations } from "next-intl";
 import getUser from "@/lib/getUser";
 import parseJWT from "@/app/util/parseJWT";
+import makeReservation from "@/lib/makeReservation";
 
 interface StadiumModalComponentProps {
   stadiumId: string;
@@ -52,6 +53,16 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
     setStadiumReservation((prev) => ({ ...prev, startDate: date, time: time }));
   };
 
+  const onSubmit = async () => {
+    const response = await makeReservation(stadiumId, stadiumReservation);
+
+    if (response == null) {
+      alert("Krivo");
+    } else {
+      alert("Uspjesno");
+    }
+  };
+
   const buttonEnable =
     stadiumReservation.startDate !== "" &&
     stadiumReservation.time !== "" &&
@@ -59,8 +70,6 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
 
   if (isLoading) return <CircularProgressBar />;
   if (!stadium) return <h1>No data!</h1>;
-
-  console.log(stadiumReservation);
 
   return (
     <div className={styles.stadium_modal}>
@@ -85,9 +94,7 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
         />
         <ButtonComponent
           variant={"reserve"}
-          onClick={() => {
-            console.log("ej");
-          }}
+          onClick={onSubmit}
           isEnable={!buttonEnable}
         >
           <p>{t("reserveButton")}</p>
