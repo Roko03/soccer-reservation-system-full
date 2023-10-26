@@ -22,6 +22,7 @@
     "loginError": "Neuspješna prijava",
     "availableTitle": "Dostupni termini",
     "contactTitle": "Vaš kontakt",
-    "reserveButton": "Rezerviraj"
+    "reserveButton": "Rezerviraj",
+    "reservationFailed": "Nije moguće obaviti rezervaciju"
   }
 }

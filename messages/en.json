@@ -22,6 +22,7 @@
     "loginError": "Failed to log in",
     "availableTitle": "Available appointments",
     "contactTitle": "Your contact",
-    "reserveButton": "Reserve"
+    "reserveButton": "Reserve",
+    "reservationFailed": "Failed to make reservation"
   }
 }

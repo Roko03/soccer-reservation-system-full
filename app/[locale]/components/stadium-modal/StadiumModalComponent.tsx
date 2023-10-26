@@ -11,10 +11,14 @@ import makeReservation from "@/lib/makeReservation";
 
 interface StadiumModalComponentProps {
   stadiumId: string;
+  closeDialog: () => void;
+  setFailedLogin: () => void;
 }
 
 const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
   stadiumId,
+  closeDialog,
+  setFailedLogin,
 }) => {
   const t = useTranslations("Index");
   const [stadium, setStadium] = useState<Stadium | null>(null);
@@ -57,9 +61,22 @@ const StadiumModalComponent: React.FC<StadiumModalComponentProps> = ({
     const response = await makeReservation(stadiumId, stadiumReservation);
 
     if (response == null) {
-      alert("Krivo");
+      setFailedLogin();
+      setStadiumReservation((prev) => ({
+        ...prev,
+        phoneNumber: 0,
+        startDate: "",
+        time: "",
+      }));
+      closeDialog();
     } else {
-      alert("Uspjesno");
+      setStadiumReservation((prev) => ({
+        ...prev,
+        phoneNumber: 0,
+        startDate: "",
+        time: "",
+      }));
+      closeDialog();
     }
   };
 
