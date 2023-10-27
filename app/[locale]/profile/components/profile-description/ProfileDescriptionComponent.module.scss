@@ -1,0 +1,59 @@
+@import "../../../../styles/main.scss";
+
+.profile_description {
+  width: 100%;
+
+  @include breakpoint(medium) {
+    width: 40%;
+  }
+
+  .profile_image {
+    display: block;
+    margin: rem(30) auto;
+    width: rem(170);
+    height: rem(170);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      position: relative !important;
+      width: rem(110) !important;
+      height: rem(110) !important;
+      object-fit: contain !important;
+    }
+  }
+
+  .username_container {
+    margin: rem(18) 0;
+    display: flex;
+    flex-direction: column;
+    gap: rem(18);
+  }
+
+  .profile_username {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(10);
+
+    .username_input {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #000;
+      width: 100%;
+      font-size: rem(18);
+    }
+  }
+
+  .email_container {
+    margin: rem(18) 0;
+    display: flex;
+    flex-direction: column;
+    gap: rem(18);
+  }
+}

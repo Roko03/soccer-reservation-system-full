@@ -1,0 +1,55 @@
+import { useState } from "react";
+import styles from "./ProfileDescriptionComponent.module.scss";
+import Image from "next/image";
+
+interface ProfileDescriptionComponentProps {
+  user: UserData;
+}
+
+const ProfileDescriptionComponent: React.FC<
+  ProfileDescriptionComponentProps
+> = ({ user }) => {
+  const [isEdit, setIsEdit] = useState(false);
+  return (
+    <div className={styles.profile_description}>
+      <h1>Profil</h1>
+      <div className={styles.profile_image}>
+        <Image src={"/profile.svg"} alt="profil" fill />
+      </div>
+      <div className={styles.username_container}>
+        <h3>Ime:</h3>
+        <div className={styles.profile_username}>
+          {!isEdit ? (
+            <>
+              <p>{user.username}</p>
+              <Image
+                src={"/pencil.svg"}
+                width={18}
+                height={18}
+                alt="pencil"
+                onClick={() => setIsEdit(true)}
+              />
+            </>
+          ) : (
+            <>
+              <input value={user.username} className={styles.username_input} />
+              <Image
+                src={"/check.svg"}
+                width={18}
+                height={18}
+                alt="check"
+                onClick={() => setIsEdit(false)}
+              />
+            </>
+          )}
+        </div>
+      </div>
+      <div className={styles.email_container}>
+        <h3>Email:</h3>
+        <p>{user.email}</p>
+      </div>
+    </div>
+  );
+};
+
+export default ProfileDescriptionComponent;

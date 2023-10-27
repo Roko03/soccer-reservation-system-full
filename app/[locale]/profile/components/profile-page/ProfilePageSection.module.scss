@@ -1,0 +1,16 @@
+@import "../../../../styles/main.scss";
+
+.profile_container {
+  margin-top: rem(32);
+  margin-bottom: rem(48);
+  padding: 0 rem(16);
+  display: flex;
+  flex-direction: column;
+  gap: rem(32);
+
+  @include breakpoint(medium) {
+    margin-top: rem(48);
+    padding: 0 rem(128);
+    flex-direction: row;
+  }
+}
