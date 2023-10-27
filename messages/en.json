@@ -19,6 +19,10 @@
     "passwordLength": "Password must be at least 6 characters",
     "successfulRegisterMessage": "You have successfully register",
     "errorRegisterMessage": "Username or email already exist",
-    "loginError": "Failed to log in"
+    "loginError": "Failed to log in",
+    "availableTitle": "Available appointments",
+    "contactTitle": "Your contact",
+    "reserveButton": "Reserve",
+    "reservationFailed": "Failed to make reservation"
   }
 }

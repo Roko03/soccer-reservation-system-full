@@ -4,7 +4,7 @@ interface ButtonComponentProps {
   children: React.ReactNode;
   onClick?: () => void;
   isEnable?: boolean;
-  variant: "authentication" | "add" | "profile" | "delete";
+  variant: "authentication" | "add" | "profile" | "delete" | "reserve";
 }
 
 const ButtonComponent: React.FC<ButtonComponentProps> = ({
@@ -26,6 +26,9 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({
       break;
     case "delete":
       classStyle = styles.delete_button;
+      break;
+    case "reserve":
+      classStyle = styles.reserve_button;
       break;
   }
 

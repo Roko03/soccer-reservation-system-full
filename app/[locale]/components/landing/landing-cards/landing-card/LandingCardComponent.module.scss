@@ -1,0 +1,36 @@
+@import "../../../../../styles/main.scss";
+
+.landing_card {
+  height: rem(450);
+  width: 100%;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  border-radius: rem(16);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  &__description {
+    height: rem(100);
+    padding: rem(18);
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+
+    .location {
+      display: flex;
+      align-items: center;
+      gap: rem(8);
+
+      p {
+        font-size: rem(16) !important;
+      }
+    }
+  }
+
+  &__image {
+    margin-top: auto;
+    position: relative !important;
+    width: 100% !important;
+    height: rem(350) !important;
+    object-fit: cover;
+  }
+}
