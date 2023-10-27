@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./ProfileDescriptionComponent.module.scss";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface ProfileDescriptionComponentProps {
   user: UserData;
@@ -9,15 +10,16 @@ interface ProfileDescriptionComponentProps {
 const ProfileDescriptionComponent: React.FC<
   ProfileDescriptionComponentProps
 > = ({ user }) => {
+  const t = useTranslations("Index");
   const [isEdit, setIsEdit] = useState(false);
   return (
     <div className={styles.profile_description}>
-      <h1>Profil</h1>
+      <h1>{t("profilTitle")}</h1>
       <div className={styles.profile_image}>
         <Image src={"/profile.svg"} alt="profil" fill />
       </div>
       <div className={styles.username_container}>
-        <h3>Ime:</h3>
+        <h3>{t("username")}:</h3>
         <div className={styles.profile_username}>
           {!isEdit ? (
             <>

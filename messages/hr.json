@@ -23,6 +23,8 @@
     "availableTitle": "Dostupni termini",
     "contactTitle": "Vaš kontakt",
     "reserveButton": "Rezerviraj",
-    "reservationFailed": "Nije moguće obaviti rezervaciju"
+    "reservationFailed": "Nije moguće obaviti rezervaciju",
+    "profilTitle": "Profil",
+    "reservationTitle": "Rezervacije"
   }
 }

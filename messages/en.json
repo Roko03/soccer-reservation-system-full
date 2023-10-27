@@ -23,6 +23,8 @@
     "availableTitle": "Available appointments",
     "contactTitle": "Your contact",
     "reserveButton": "Reserve",
-    "reservationFailed": "Failed to make reservation"
+    "reservationFailed": "Failed to make reservation",
+    "profilTitle": "Profile",
+    "reservationTitle": "Reservation"
   }
 }
