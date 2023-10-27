@@ -1,0 +1,8 @@
+@import "../../../../../../styles/main.scss";
+
+.reservation_list {
+  margin-top: rem(32);
+  display: flex;
+  flex-direction: column;
+  gap: rem(18);
+}

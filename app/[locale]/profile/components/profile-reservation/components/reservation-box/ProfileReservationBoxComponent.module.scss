@@ -1,0 +1,36 @@
+@import "../../../../../../styles/main.scss";
+
+.reservation_box {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  padding: rem(16);
+  border-radius: rem(16);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+    flex-wrap: wrap;
+
+    span {
+      display: none;
+    }
+
+    @include breakpoint(medium) {
+      span {
+        display: block;
+      }
+
+      p {
+        font-size: rem(24) !important;
+      }
+
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}

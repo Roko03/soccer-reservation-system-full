@@ -13,7 +13,7 @@ const ProfileDescriptionComponent: React.FC<
   const t = useTranslations("Index");
   const [isEdit, setIsEdit] = useState(false);
   return (
-    <div className={styles.profile_description}>
+    <aside className={styles.profile_description}>
       <h1>{t("profilTitle")}</h1>
       <div className={styles.profile_image}>
         <Image src={"/profile.svg"} alt="profil" fill />
@@ -50,7 +50,7 @@ const ProfileDescriptionComponent: React.FC<
         <h3>Email:</h3>
         <p>{user.email}</p>
       </div>
-    </div>
+    </aside>
   );
 };
 

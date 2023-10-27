@@ -25,6 +25,7 @@
     "reserveButton": "Rezerviraj",
     "reservationFailed": "Nije moguće obaviti rezervaciju",
     "profilTitle": "Profil",
-    "reservationTitle": "Rezervacije"
+    "reservationTitle": "Rezervacije",
+    "delete": "Izbriši"
   }
 }

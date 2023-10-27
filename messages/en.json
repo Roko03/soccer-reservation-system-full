@@ -25,6 +25,7 @@
     "reserveButton": "Reserve",
     "reservationFailed": "Failed to make reservation",
     "profilTitle": "Profile",
-    "reservationTitle": "Reservation"
+    "reservationTitle": "Reservation",
+    "delete": "Delete"
   }
 }
