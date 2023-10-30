@@ -3,6 +3,7 @@ import ProfileReservationBoxComponent from "../reservation-box/ProfileReservatio
 import styles from "./ProfilReservationListComponent.module.scss";
 import getUserReservation from "@/lib/getUserReservation";
 import CircularProgressBar from "@/app/[locale]/components/circular-progress/CircularProgressBar";
+import deleteReservation from "@/lib/deleteReservation";
 
 interface ProfilReservationListComponentProps {
   userId: string;
@@ -11,7 +12,9 @@ interface ProfilReservationListComponentProps {
 const ProfilReservationListComponent: React.FC<
   ProfilReservationListComponentProps
 > = ({ userId }) => {
-  const [reservationArray, setReservationArray] = useState([]);
+  const [reservationArray, setReservationArray] = useState<
+    ReservationMongo[] | []
+  >([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -23,6 +26,15 @@ const ProfilReservationListComponent: React.FC<
     })();
   }, []);
 
+  const removeReservation = async (id: string) => {
+    const response = await deleteReservation(id);
+    const filteredReservationArray = reservationArray.filter(
+      (reservation) => reservation._id !== id
+    );
+
+    setReservationArray(filteredReservationArray);
+  };
+
   if (isLoading) return <CircularProgressBar />;
 
   return (
@@ -32,6 +44,7 @@ const ProfilReservationListComponent: React.FC<
           <ProfileReservationBoxComponent
             key={index}
             reservation={reservation}
+            deleteReservation={removeReservation}
           />
         );
       })}

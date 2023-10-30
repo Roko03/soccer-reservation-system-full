@@ -31,3 +31,13 @@ type Stadium = {
     latitude: number;
     longitude: number;
 }
+
+type ReservationMongo = {
+    _id: string;
+    stadiumId: string;
+    name: string;
+    userId: string;
+    phoneNumber: number;
+    startDate: string,
+    time: string
+}

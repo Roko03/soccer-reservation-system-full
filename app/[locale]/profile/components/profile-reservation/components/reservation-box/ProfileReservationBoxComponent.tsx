@@ -3,12 +3,13 @@ import styles from "./ProfileReservationBoxComponent.module.scss";
 import { useTranslations } from "next-intl";
 
 interface ProfileReservationBoxComponentProps {
-  reservation: Reservation;
+  reservation: ReservationMongo;
+  deleteReservation: (id: string) => void;
 }
 
 const ProfileReservationBoxComponent: React.FC<
   ProfileReservationBoxComponentProps
-> = ({ reservation }) => {
+> = ({ reservation, deleteReservation }) => {
   const t = useTranslations("Index");
   return (
     <div className={styles.reservation_box}>
@@ -16,8 +17,12 @@ const ProfileReservationBoxComponent: React.FC<
         <p>{reservation.startDate}</p>
         <span>-</span>
         <p>{reservation.time}</p>
+        <p>{reservation.stadiumId}</p>
       </div>
-      <ButtonComponent variant={"delete"}>
+      <ButtonComponent
+        variant={"delete"}
+        onClick={() => deleteReservation(reservation._id)}
+      >
         <p>{t("delete")}</p>
       </ButtonComponent>
     </div>
