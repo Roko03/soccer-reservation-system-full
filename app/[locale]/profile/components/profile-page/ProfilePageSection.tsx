@@ -43,7 +43,7 @@ const ProfilePageSection = () => {
       <HeaderComponent />
       <section className={styles.profile_container}>
         <ProfileDescriptionComponent user={userData} />
-        <ProfileReservationComponent />
+        <ProfileReservationComponent userId={userData.id} />
       </section>
     </>
   );
